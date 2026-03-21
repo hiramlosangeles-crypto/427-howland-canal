@@ -3,29 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#1E2E48" />
+  <meta name="theme-color" content="#243b5d" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="description" content="For Sale &amp; For Lease — 2 bed / 1 bath · $2,195,000 | $7,000/mo · Steven Bettencourt, Spaces &amp; Beyond®" />
-  <title>For Sale — [PROPERTY ADDRESS] | Spaces &amp; Beyond®</title>
+  <meta name="description" content="For Sale &amp; For Lease — 427 Howland Canal, Venice CA · 2 bed / 1 bath · $2,195,000 | $7,000/mo · Steven Bettencourt, Spaces &amp; Beyond®" />
+  <title>427 Howland Canal, Venice CA | Spaces &amp; Beyond®</title>
+
+  <!-- Cormorant Garamond — elegant headings & body -->
+  <!-- Inter — crisp numerals, labels, UI elements -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+
+    /* ── Sign-matched palette ──────────────────────
+       Navy:  #243b5d   (sign dark text / header)
+       Gold:  #c5a56c   (sign gold rules & accents)
+       Cream: #f5f0e8   (sign background — primary)
+    ──────────────────────────────────────────────── */
     :root {
-      --cream: #F8F6F1;
-      --navy:  #1E2E48;
-      --gold:  #C5A26A;
-      --blue:  #84A0B4;
-      --rule:  1px solid #d4c9a8;
+      --cream:       #f5f0e8;
+      --cream-dark:  #ede8de;
+      --cream-mid:   #e8e2d6;
+      --navy:        #243b5d;
+      --navy-soft:   #2e4a72;
+      --gold:        #c5a56c;
+      --gold-light:  rgba(197,165,108,0.22);
+      --blue:        #7a96b0;
+      --blue-soft:   #5a7888;
+      --rule:        1px solid #c5a56c;
+      --rule-light:  1px solid rgba(197,165,108,0.3);
+      --serif:       'Cormorant Garamond', Georgia, serif;
+      --sans:        'Inter', system-ui, sans-serif;
       --safe-top:    env(safe-area-inset-top, 0px);
       --safe-bottom: env(safe-area-inset-bottom, 0px);
     }
+
     body {
-      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-family: var(--serif);
       background: var(--cream);
       color: var(--navy);
       -webkit-font-smoothing: antialiased;
@@ -40,31 +58,26 @@
       background: var(--navy);
       display: flex; align-items: center; justify-content: space-between;
       padding: calc(10px + var(--safe-top)) 18px 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 16px rgba(36,59,93,0.25);
     }
     .header-brand { display: flex; align-items: center; gap: 12px; }
-    .header-logo  {
-      height: 38px;
-      width: auto;
-      flex-shrink: 0;
-      /* logo PNG has transparent bg — looks great on navy */
-    }
+    .header-logo  { height: 36px; width: auto; flex-shrink: 0; }
     .header-name  {
-      font-size: 11px; letter-spacing: 4px;
+      font-family: var(--sans); font-size: 11px; letter-spacing: 3px;
       text-transform: uppercase; color: var(--cream);
-      font-weight: 500; line-height: 1.25;
+      font-weight: 500; line-height: 1.3;
     }
     .header-name span {
       display: block; font-size: 9px; color: var(--gold);
-      letter-spacing: 2px; font-style: italic; font-weight: 400;
+      letter-spacing: 2px; font-weight: 400; margin-top: 2px;
     }
     .btn-call {
       background: var(--gold); color: var(--navy);
-      font-family: inherit; font-size: 13px; font-weight: 700;
+      font-family: var(--sans); font-size: 12px; font-weight: 700;
       letter-spacing: 2px; text-transform: uppercase;
-      border: none; border-radius: 2px;
+      border: none; border-radius: 3px;
       padding: 10px 16px; min-height: 44px;
-      display: inline-flex; align-items: center;
+      display: inline-flex; align-items: center; gap: 6px;
       -webkit-tap-highlight-color: transparent; user-select: none;
     }
 
@@ -76,86 +89,109 @@
     .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.92; }
     .hero-placeholder {
       width: 100%; height: 100%;
-      background: linear-gradient(135deg, #1a2840 0%, #2a4060 50%, #1E3A5A 100%);
+      background: linear-gradient(135deg, #1e3050 0%, #2a4870 50%, #243b5d 100%);
       display: flex; flex-direction: column; align-items: center;
       justify-content: center; gap: 10px;
-      color: rgba(255,255,255,0.3); font-size: 12px;
-      letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(245,240,232,0.3); font-size: 11px;
+      font-family: var(--sans); letter-spacing: 3px; text-transform: uppercase;
     }
     .hero-overlay {
       position: absolute; bottom: 0; left: 0; right: 0;
-      background: linear-gradient(to top, rgba(30,46,72,0.88) 0%, transparent 100%);
-      padding: 32px 18px 16px;
+      background: linear-gradient(to top, rgba(36,59,93,0.9) 0%, transparent 100%);
+      padding: 36px 20px 18px;
     }
     .hero-address {
-      font-size: clamp(19px, 5.5vw, 28px);
+      font-family: var(--serif);
+      font-size: clamp(20px, 5.8vw, 30px);
       font-weight: 600; color: #fff; line-height: 1.2;
     }
     .hero-sub {
-      font-size: 11px; letter-spacing: 3px;
-      text-transform: uppercase; color: var(--gold); margin-top: 4px;
+      font-family: var(--sans); font-size: 10px; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold); margin-top: 5px;
     }
 
-    /* ── PRICE HERO ─────────────────────────────── */
+    /* ── PRICE BLOCK — cream bg, Inter numerals ─── */
     .price-hero {
-      background: var(--navy);
+      background: var(--cream);
+      border-top: 3px solid var(--gold);
       border-bottom: 3px solid var(--gold);
       display: grid; grid-template-columns: 1fr 1fr;
     }
     .ph-cell {
-      padding: 20px 16px; text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.12);
+      padding: 22px 16px 20px; text-align: center;
+      border-right: var(--rule);
     }
     .ph-cell:last-child { border-right: none; }
     .ph-label {
-      display: block; font-size: 9px; letter-spacing: 4px;
-      text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 6px;
+      display: block; font-family: var(--sans); font-size: 10px;
+      letter-spacing: 4px; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 8px; font-weight: 600;
     }
     .ph-price {
-      display: block; font-size: clamp(26px, 7.5vw, 36px);
-      font-weight: 700; color: var(--gold); line-height: 1;
+      display: block; font-family: var(--sans);
+      font-size: clamp(26px, 7.5vw, 38px);
+      font-weight: 700; color: var(--navy); line-height: 1;
+      letter-spacing: -0.5px;
     }
-    .ph-price sup { font-size: 0.5em; vertical-align: super; font-weight: 400; }
-    .ph-price sub { font-size: 0.42em; vertical-align: baseline; font-weight: 400; color: rgba(197,162,106,0.75); }
+    .ph-price sup { font-size: 0.52em; vertical-align: super; font-weight: 600; }
+    .ph-price sub { font-size: 0.44em; vertical-align: baseline; font-weight: 400; color: var(--blue); }
     .ph-type {
-      display: block; font-size: 10px; letter-spacing: 2px;
-      text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 5px;
+      display: block; font-family: var(--sans); font-size: 9px;
+      letter-spacing: 3px; text-transform: uppercase; color: var(--blue-soft); margin-top: 6px;
     }
 
     /* ── QUICK STATS ────────────────────────────── */
     .stats-bar {
-      background: #f0ede6;
+      background: var(--cream-dark);
       display: grid; grid-template-columns: repeat(4, 1fr);
       border-bottom: var(--rule);
     }
-    .stat { text-align: center; padding: 12px 6px; border-right: var(--rule); }
+    .stat { text-align: center; padding: 14px 6px; border-right: var(--rule-light); }
     .stat:last-child { border-right: none; }
-    .stat-val { display: block; font-size: clamp(15px, 3.5vw, 19px); font-weight: 700; color: var(--navy); line-height: 1; }
-    .stat-lbl { display: block; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-top: 4px; }
+    .stat-val {
+      display: block; font-family: var(--sans);
+      font-size: clamp(17px, 4vw, 22px); font-weight: 700;
+      color: var(--navy); line-height: 1;
+    }
+    .stat-lbl {
+      display: block; font-family: var(--sans); font-size: 9px;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); margin-top: 5px; font-weight: 500;
+    }
 
     /* ── SECTION SHELL ──────────────────────────── */
-    .section { padding: 28px 18px; }
+    .section     { padding: 28px 20px; background: var(--cream); }
+    .section-alt { padding: 28px 20px; background: var(--cream-dark); }
     .section-title {
-      font-size: clamp(16px, 4.5vw, 20px);
+      font-family: var(--serif);
+      font-size: clamp(17px, 4.5vw, 22px);
       font-weight: 700; letter-spacing: 5px;
       text-transform: uppercase; color: var(--navy);
     }
     .section-title::after {
-      content: ''; display: block; width: 28px; height: 2px;
-      background: var(--gold); margin-top: 7px;
+      content: ''; display: block; width: 30px; height: 2px;
+      background: var(--gold); margin-top: 8px;
     }
-    hr.divider { border: none; border-top: var(--rule); margin: 0; }
+    hr.divider { border: none; border-top: var(--rule-light); margin: 0; }
+    hr.divider-gold { border: none; border-top: var(--rule); margin: 0; }
 
     /* ── SPECS GRID ─────────────────────────────── */
     .specs-grid {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1px; background: #d4c9a8;
-      border: 1px solid #d4c9a8; border-radius: 3px;
-      overflow: hidden; margin-top: 16px;
+      gap: 1px; background: rgba(197,165,108,0.25);
+      border: 1px solid rgba(197,165,108,0.3); border-radius: 4px;
+      overflow: hidden; margin-top: 18px;
     }
-    .spec-cell { background: var(--cream); padding: 14px 16px; }
-    .s-lbl { display: block; font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 3px; }
-    .s-val { font-size: 16px; font-weight: 600; color: var(--navy); }
+    .spec-cell { background: var(--cream); padding: 15px 16px; }
+    .s-lbl {
+      display: block; font-family: var(--sans); font-size: 9px;
+      letter-spacing: 3px; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 4px; font-weight: 600;
+    }
+    .s-val {
+      font-family: var(--sans); font-size: 16px;
+      font-weight: 600; color: var(--navy);
+    }
     .spec-cell.full { grid-column: 1 / -1; }
 
     /* ── GALLERY ────────────────────────────────── */
@@ -169,157 +205,211 @@
     .gallery-track::-webkit-scrollbar { display: none; }
     .gallery-slide {
       flex: 0 0 88vw; height: 58vw;
-      scroll-snap-align: start; border-radius: 3px;
-      overflow: hidden; background: #d4c9a8; flex-shrink: 0;
+      scroll-snap-align: start; border-radius: 4px;
+      overflow: hidden; background: var(--cream-dark); flex-shrink: 0;
     }
     .gallery-slide img { width: 100%; height: 100%; object-fit: cover; }
-    .gallery-dots { display: flex; justify-content: center; gap: 6px; margin-top: 10px; }
+    .gallery-dots { display: flex; justify-content: center; gap: 7px; margin-top: 12px; }
     .dot {
       width: 8px; height: 8px; border-radius: 50%;
-      background: #d4c9a8; cursor: pointer; transition: background 0.2s;
+      background: rgba(197,165,108,0.3); cursor: pointer; transition: background 0.2s;
       -webkit-tap-highlight-color: transparent;
     }
     .dot.active { background: var(--gold); }
-    .gallery-hint { text-align: center; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-top: 6px; }
+    .gallery-hint {
+      text-align: center; font-family: var(--sans); font-size: 10px;
+      letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-top: 7px;
+    }
 
     /* ── KEY FEATURES ───────────────────────────── */
-    .features-list { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-top: 16px; }
-    .features-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: #3a4e68; line-height: 1.4; }
-    .feat-icon { width: 14px; height: 14px; flex-shrink: 0; margin-top: 3px; color: var(--gold); }
+    .features-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 18px; }
+    .features-list li { display: flex; align-items: flex-start; gap: 11px; font-size: 16px; color: var(--navy); line-height: 1.45; }
+    .feat-icon { width: 14px; height: 14px; flex-shrink: 0; margin-top: 4px; color: var(--gold); }
 
     /* ── FAQ ────────────────────────────────────── */
-    .faq-list { margin-top: 16px; border: var(--rule); border-radius: 3px; overflow: hidden; }
-    details { border-bottom: var(--rule); }
+    .faq-list {
+      margin-top: 18px;
+      border: 1px solid rgba(197,165,108,0.35);
+      border-radius: 4px; overflow: hidden;
+    }
+    details { border-bottom: 1px solid rgba(197,165,108,0.25); }
     details:last-child { border-bottom: none; }
     summary {
       list-style: none; cursor: pointer;
-      padding: 15px 16px; font-size: 15px; font-weight: 600;
+      padding: 16px 18px; font-size: 15px; font-weight: 600;
       color: var(--navy); display: flex;
       justify-content: space-between; align-items: center; gap: 12px;
-      background: var(--cream); min-height: 52px;
+      background: var(--cream); min-height: 54px;
       -webkit-tap-highlight-color: transparent; user-select: none;
     }
     summary::-webkit-details-marker { display: none; }
-    summary::after { content: '+'; font-size: 18px; font-weight: 300; color: var(--gold); flex-shrink: 0; transition: transform 0.2s; line-height: 1; }
+    summary::after {
+      content: '+'; font-family: var(--sans); font-size: 20px;
+      font-weight: 300; color: var(--gold); flex-shrink: 0; line-height: 1;
+    }
     details[open] summary::after { content: '×'; }
-    details[open] summary { background: #f0ede6; }
-    .faq-answer { padding: 0 16px 16px; font-size: 14px; color: #4a5e78; line-height: 1.65; background: #f0ede6; }
+    details[open] summary { background: var(--cream-dark); }
+    .faq-answer {
+      padding: 0 18px 16px; font-size: 15px;
+      color: var(--blue-soft); line-height: 1.7; background: var(--cream-dark);
+    }
 
-    /* ── CONTACT SECTION ────────────────────────── */
-    .contact-section { background: var(--navy); padding: 28px 18px; }
-    .contact-section .section-title { color: var(--cream); }
-    .contact-section .section-title::after { background: var(--gold); }
+    /* ── ASK A QUESTION ─────────────────────────── */
+    .ask-section { background: var(--cream-dark); padding: 30px 20px; }
+    .ask-section .section-title { color: var(--navy); }
+    .ask-section .section-title::after { background: var(--gold); }
+    .ask-sub { font-size: 15px; color: var(--blue-soft); margin-top: 10px; line-height: 1.65; }
+
+    /* ── CONTACT — softened, airy bottom ────────── */
+    .contact-agent { background: var(--cream); padding: 30px 20px 22px; }
+    .contact-agent .section-title { color: var(--navy); }
+    .contact-agent .section-title::after { background: var(--gold); }
+
     .agent-card {
       display: flex; align-items: center; gap: 16px;
-      margin-top: 20px; padding: 18px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(197,162,106,0.3); border-radius: 3px;
+      margin-top: 20px; padding: 18px 20px;
+      background: var(--cream-dark);
+      border: 1px solid rgba(197,165,108,0.45); border-radius: 4px;
     }
     .agent-avatar {
       width: 64px; height: 64px; border-radius: 50%;
-      background: linear-gradient(135deg, #2a4060, #3a5070);
+      background: var(--navy);
       border: 2px solid var(--gold); flex-shrink: 0;
       display: flex; align-items: center; justify-content: center;
       color: var(--gold); font-size: 20px; font-weight: 600; letter-spacing: 1px;
       overflow: hidden;
     }
     .agent-avatar img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
-    .a-name { font-size: 17px; font-weight: 600; color: var(--cream); letter-spacing: 2px; text-transform: uppercase; }
-    .a-brand { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-top: 3px; }
-    .a-lic { font-size: 9px; color: rgba(255,255,255,0.3); font-style: italic; margin-top: 3px; }
+    .a-name { font-family: var(--sans); font-size: 16px; font-weight: 700; color: var(--navy); letter-spacing: 1px; }
+    .a-brand { font-family: var(--sans); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-top: 3px; font-weight: 500; }
+    .a-lic { font-family: var(--sans); font-size: 10px; color: var(--blue); margin-top: 3px; }
 
-    /* Contact buttons */
-    .contact-btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
-    .contact-btn-row .btn-full { grid-column: 1 / -1; }
+    /* Action buttons — soft cream-mid zone */
+    .contact-actions {
+      background: var(--cream-mid);
+      padding: 22px 20px;
+      border-top: 2px solid var(--gold);
+    }
+    .contact-btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .contact-btn-row .btn-full { grid-column: 1 / -1; margin-top: 0; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center;
-      gap: 7px; font-family: inherit; font-size: 12px; font-weight: 700;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      border-radius: 2px; padding: 13px 12px;
-      min-height: 52px; border: none; cursor: pointer;
+      gap: 7px; font-family: var(--sans); font-size: 12px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      border-radius: 3px; padding: 14px 12px;
+      min-height: 54px; border: none; cursor: pointer;
       -webkit-tap-highlight-color: transparent; user-select: none;
       transition: opacity 0.15s; text-align: center;
     }
-    .btn:active { opacity: 0.8; }
-    .btn-gold { background: var(--gold); color: var(--navy); }
-    .btn-ghost { background: transparent; color: var(--cream); border: 1px solid rgba(197,162,106,0.45); }
+    .btn:active { opacity: 0.75; }
+    .btn-gold   { background: var(--gold); color: var(--navy); }
+    .btn-navy   { background: var(--navy); color: var(--cream); border: none; }
+    .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
 
-    /* Lead form */
-    .lead-form-wrap { margin-top: 24px; border-top: 1px solid rgba(197,162,106,0.25); padding-top: 22px; }
-    .lead-form-title { font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
-    .form-row { margin-bottom: 12px; }
-    .form-row label { display: block; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 5px; }
+    /* Lead form — cream background (light, calm) */
+    .contact-form-section {
+      background: var(--cream);
+      padding: 26px 20px 30px;
+      border-top: 1px solid rgba(197,165,108,0.3);
+    }
+    .lead-form-title {
+      font-family: var(--sans); font-size: 11px; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+      font-weight: 600;
+    }
+    .form-row { margin-bottom: 14px; }
+    .form-row label {
+      display: block; font-family: var(--sans); font-size: 10px;
+      letter-spacing: 3px; text-transform: uppercase; color: var(--blue-soft);
+      margin-bottom: 6px; font-weight: 500;
+    }
     .form-row input,
     .form-row select,
     .form-row textarea {
-      width: 100%; background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(197,162,106,0.3); border-radius: 2px;
-      color: var(--cream); font-family: 'Cormorant Garamond', Georgia, serif;
+      width: 100%; background: var(--cream-dark);
+      border: 1.5px solid rgba(197,165,108,0.4); border-radius: 3px;
+      color: var(--navy); font-family: var(--sans);
       font-size: 16px; padding: 13px 14px; min-height: 52px;
       outline: none; transition: border-color 0.15s; -webkit-appearance: none;
     }
     .form-row textarea { min-height: 90px; resize: vertical; }
     .form-row select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C5A26A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c5a56c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer;
     }
-    .form-row select option { background: var(--navy); color: var(--cream); }
+    .form-row select option { background: var(--cream); color: var(--navy); }
     .form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--gold); }
-    .form-row input::placeholder, .form-row textarea::placeholder { color: rgba(255,255,255,0.2); }
+    .form-row input::placeholder, .form-row textarea::placeholder { color: rgba(36,59,93,0.3); }
     .form-submit {
       width: 100%; margin-top: 4px;
-      background: var(--gold); color: var(--navy);
-      font-family: inherit; font-size: 13px; font-weight: 700;
+      background: var(--navy); color: var(--cream);
+      font-family: var(--sans); font-size: 12px; font-weight: 700;
       letter-spacing: 3px; text-transform: uppercase;
-      border: none; border-radius: 2px; padding: 16px; min-height: 54px;
+      border: none; border-radius: 3px; padding: 16px; min-height: 54px;
       cursor: pointer; -webkit-tap-highlight-color: transparent; transition: opacity 0.15s;
     }
     .form-submit:active { opacity: 0.8; }
-    .form-msg { margin-top: 10px; font-size: 13px; letter-spacing: 1px; text-align: center; min-height: 20px; }
-    .form-msg.success { color: #7ecba1; }
-    .form-msg.error   { color: #e0826d; }
+    .form-msg { margin-top: 12px; font-family: var(--sans); font-size: 13px; letter-spacing: 0.5px; text-align: center; min-height: 20px; }
+    .form-msg.success { color: #2e7d5a; }
+    .form-msg.error   { color: #c0392b; }
 
-    /* Contact info rows */
-    .contact-info { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
-    .contact-row { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.65); }
-    .c-icon { width: 15px; height: 15px; color: var(--gold); flex-shrink: 0; }
-    .contact-row a { color: var(--cream); }
-
-    /* ── ASK A QUESTION ─────────────────────────── */
-    .ask-section { background: #f0ede6; padding: 28px 18px; }
-    .ask-section .section-title { color: var(--navy); }
-    .ask-section .section-title::after { background: var(--gold); }
-    .ask-section .form-row label { color: #6a7e94; }
+    /* Ask section form — same cream-dark as ask-section bg */
     .ask-section .form-row input,
     .ask-section .form-row textarea {
-      background: var(--cream); border: 1px solid #c8bfa0; color: var(--navy);
+      background: var(--cream); border: 1.5px solid rgba(197,165,108,0.4); color: var(--navy);
     }
-    .ask-section .form-row input::placeholder, .ask-section .form-row textarea::placeholder { color: #aaa; }
-    .ask-section .form-row input:focus, .ask-section .form-row textarea:focus { border-color: var(--gold); }
+    .ask-section .form-row input::placeholder,
+    .ask-section .form-row textarea::placeholder { color: rgba(36,59,93,0.3); }
+    .ask-section .form-row input:focus,
+    .ask-section .form-row textarea:focus { border-color: var(--gold); }
     .ask-section .form-submit { background: var(--navy); color: var(--cream); }
     .ask-section .form-msg.success { color: #2e7d5a; }
+    .ask-section .form-msg.error   { color: #c0392b; }
+
+    /* Contact info rows — cream-dark zone */
+    .contact-details {
+      background: var(--cream-dark);
+      padding: 22px 20px 26px;
+      border-top: 1px solid rgba(197,165,108,0.3);
+    }
+    .contact-details-title {
+      font-family: var(--sans); font-size: 10px; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 14px; font-weight: 600;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 12px; }
+    .contact-row { display: flex; align-items: center; gap: 13px; }
+    .c-icon { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
+    .c-text { font-family: var(--sans); font-size: 15px; font-weight: 500; color: var(--navy); }
+    .c-text a { color: var(--navy); }
+
+    /* ── FOOTER — light, soft ───────────────────── */
+    .site-footer {
+      background: var(--cream-mid);
+      border-top: 1px solid rgba(197,165,108,0.35);
+      padding: 20px 20px 16px; text-align: center;
+    }
+    .site-footer p {
+      font-family: var(--sans); font-size: 10px; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--blue-soft); line-height: 2;
+    }
+    .site-footer a { color: var(--blue-soft); }
 
     /* ── STICKY BOTTOM BAR ──────────────────────── */
     .sticky-cta {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
       background: var(--navy); border-top: 2px solid var(--gold);
       display: flex; padding-bottom: var(--safe-bottom);
-      box-shadow: 0 -4px 20px rgba(0,0,0,0.35);
+      box-shadow: 0 -4px 20px rgba(36,59,93,0.4);
     }
     .sticky-cta a {
       flex: 1; display: flex; align-items: center; justify-content: center;
-      gap: 8px; min-height: 58px; font-family: inherit; font-size: 13px;
-      font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      gap: 8px; min-height: 58px; font-family: var(--sans); font-size: 12px;
+      font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
       -webkit-tap-highlight-color: transparent; user-select: none; transition: opacity 0.15s;
     }
     .sticky-cta a:active { opacity: 0.75; }
-    .cta-call { background: var(--gold); color: var(--navy); border-right: 1px solid rgba(30,46,72,0.2); }
+    .cta-call { background: var(--gold); color: var(--navy); border-right: 1px solid rgba(36,59,93,0.2); }
     .cta-text  { color: var(--cream); }
-
-    /* ── FOOTER ─────────────────────────────────── */
-    footer { background: #131f30; padding: 18px; text-align: center; }
-    footer p { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.22); line-height: 1.9; }
-    footer a { color: rgba(255,255,255,0.3); }
   </style>
 </head>
 <body>
@@ -327,55 +417,52 @@
 <!-- ── HEADER ──────────────────────────────────────── -->
 <header class="site-header">
   <div class="header-brand">
-    <!-- Spaces & Beyond logo — file lives at images/sb_logo.png -->
-    <img class="header-logo"
-         src="images/sb_logo.png"
-         alt="Spaces &amp; Beyond®"
+    <img class="header-logo" src="images/sb_logo.png" alt="Spaces &amp; Beyond®"
          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <!-- Fallback inline SVG shown if logo file not found yet -->
-    <svg style="display:none;width:28px;height:28px;flex-shrink:0" viewBox="0 0 140 116" fill="none">
-      <path d="M12 80 C14 50 30 28 58 24 C80 20 100 30 108 50 C116 68 102 82 84 76 C68 70 62 54 74 44 C82 38 92 46 88 56" stroke="#C5A26A" stroke-width="10" fill="none" stroke-linecap="round"/>
-      <path d="M10 84 C14 98 28 108 50 108 C68 108 82 98 86 84" fill="#C5A26A" opacity="0.4"/>
-      <rect x="88" y="30" width="10" height="58" fill="#F8F6F1"/><rect x="100" y="40" width="10" height="48" fill="#F8F6F1"/>
-      <rect x="112" y="50" width="10" height="38" fill="#F8F6F1"/><rect x="86" y="85" width="38" height="4" fill="#C5A26A"/>
+    <svg style="display:none;width:26px;height:26px;flex-shrink:0" viewBox="0 0 140 116" fill="none">
+      <path d="M12 80 C14 50 30 28 58 24 C80 20 100 30 108 50 C116 68 102 82 84 76 C68 70 62 54 74 44 C82 38 92 46 88 56" stroke="#c5a56c" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <path d="M10 84 C14 98 28 108 50 108 C68 108 82 98 86 84" fill="#c5a56c" opacity="0.4"/>
+      <rect x="88" y="30" width="10" height="58" fill="#f5f0e8"/><rect x="100" y="40" width="10" height="48" fill="#f5f0e8"/>
+      <rect x="112" y="50" width="10" height="38" fill="#f5f0e8"/><rect x="86" y="85" width="38" height="4" fill="#c5a56c"/>
     </svg>
     <div class="header-name">
       Spaces &amp; Beyond®
       <span>Steven Bettencourt</span>
     </div>
   </div>
-  <a href="tel:3104338281" class="btn-call">📞 Call</a>
+  <a href="tel:3104338281" class="btn-call">
+    <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+    Call
+  </a>
 </header>
 
 
 <!-- ── HERO IMAGE ──────────────────────────────────── -->
 <section class="hero">
-  <!-- Hero = best exterior shot -->
-  <img class="hero-img" src="images/exterior-canal.jpg" alt="Property exterior"
+  <img class="hero-img" src="images/exterior-front.jpg" alt="427 Howland Canal — Front exterior"
        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
   <div class="hero-placeholder" style="display:none">
     <svg width="38" height="38" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
     </svg>
-    Add exterior-canal.jpg
+    Upload exterior-front.jpg
   </div>
   <div class="hero-overlay">
-    <!-- ✏️ UPDATE with actual address -->
-    <div class="hero-address">[PROPERTY ADDRESS]</div>
+    <div class="hero-address">427 Howland Canal<br>Venice, CA 90291</div>
     <div class="hero-sub">For Sale &amp; For Lease</div>
   </div>
 </section>
 
 
-<!-- ── PRICES ───────────────────────────────────────── -->
+<!-- ── PRICES — cream background, Inter numerals ─── -->
 <div class="price-hero">
   <div class="ph-cell">
-    <span class="ph-label">Sale Price</span>
+    <span class="ph-label">For Sale</span>
     <span class="ph-price"><sup>$</sup>2,195,000</span>
     <span class="ph-type">Purchase</span>
   </div>
   <div class="ph-cell">
-    <span class="ph-label">Monthly Lease</span>
+    <span class="ph-label">For Lease</span>
     <span class="ph-price"><sup>$</sup>7,000<sub>/mo</sub></span>
     <span class="ph-type">Rental</span>
   </div>
@@ -403,166 +490,92 @@
     <div class="spec-cell"><span class="s-lbl">Garage</span><span class="s-val">2-Car</span></div>
     <div class="spec-cell full">
       <span class="s-lbl">Address</span>
-      <!-- ✏️ UPDATE -->
-      <span class="s-val">[PROPERTY ADDRESS]</span>
+      <span class="s-val">427 Howland Canal, Venice, CA 90291</span>
     </div>
   </div>
 </section>
 
-<hr class="divider" />
+<hr class="divider-gold" />
 
 
 <!-- ── GALLERY ──────────────────────────────────────── -->
-<!--
-  ✏️  PHOTO FILENAMES — save these files inside your images/ folder:
-      images/exterior-front.jpg   → front porch / white fence / dusk
-      images/kitchen-1.jpg        → kitchen island close-up, pendant lights
-      images/kitchen-2.jpg        → kitchen wide angle toward living area
-      images/kitchen-3.jpg        → kitchen from opposite side, gas range visible
-      images/bathroom.jpg         → bathroom, round mirror, gray vanity
-      images/bedroom.jpg          → bedroom, wood dresser, gray headboard
-      images/courtyard.jpg        → side yard, surfboard, blue siding
-      images/porch.jpg            → front porch close-up, red chairs
-      images/exterior-canal.jpg   → canal / street view (also used as hero)
--->
 <section class="section">
   <h2 class="section-title">Gallery</h2>
   <div class="gallery-track" id="galleryTrack">
-
-    <div class="gallery-slide">
-      <img src="images/exterior-front.jpg" alt="Front entrance — white fence, blue craftsman exterior" loading="lazy" />
-    </div>
-    <div class="gallery-slide">
-      <img src="images/kitchen-1.jpg" alt="Chef's kitchen — butcher block island, pendant lights" loading="lazy" />
-    </div>
-    <div class="gallery-slide">
-      <img src="images/kitchen-2.jpg" alt="Kitchen — open layout toward living area" loading="lazy" />
-    </div>
-    <div class="gallery-slide">
-      <img src="images/kitchen-3.jpg" alt="Kitchen — gas range, stainless appliances" loading="lazy" />
-    </div>
-    <div class="gallery-slide">
-      <img src="images/bathroom.jpg" alt="Bathroom — round mirror, granite vanity" loading="lazy" />
-    </div>
-    <div class="gallery-slide">
-      <img src="images/bedroom.jpg" alt="Bedroom — warm wood tones, natural light" loading="lazy" />
-    </div>
-    <div class="gallery-slide">
-      <img src="images/courtyard.jpg" alt="Private courtyard — lush plantings, blue siding" loading="lazy" />
-    </div>
-    <div class="gallery-slide">
-      <img src="images/porch.jpg" alt="Front porch — outdoor seating, craftsman columns" loading="lazy" />
-    </div>
-    <div class="gallery-slide">
-      <img src="images/exterior-canal.jpg" alt="Canal walkway view — Venice canals" loading="lazy" />
-    </div>
-
+    <!-- ✏️ hero image is exterior-front.jpg; gallery continues with the rest -->
+    <div class="gallery-slide"><img src="images/exterior-canal.jpg" alt="Venice Canal walkway view" loading="lazy" /></div>
+    <div class="gallery-slide"><img src="images/kitchen-1.jpg" alt="Chef's kitchen — butcher block island" loading="lazy" /></div>
+    <div class="gallery-slide"><img src="images/kitchen-2.jpg" alt="Kitchen — open layout toward living area" loading="lazy" /></div>
+    <div class="gallery-slide"><img src="images/kitchen-3.jpg" alt="Kitchen — gas range, stainless appliances" loading="lazy" /></div>
+    <div class="gallery-slide"><img src="images/bathroom.jpg" alt="Bathroom — round mirror, granite vanity" loading="lazy" /></div>
+    <div class="gallery-slide"><img src="images/bedroom.jpg" alt="Bedroom — warm wood tones, natural light" loading="lazy" /></div>
+    <div class="gallery-slide"><img src="images/courtyard.jpg" alt="Private courtyard" loading="lazy" /></div>
+    <div class="gallery-slide"><img src="images/porch.jpg" alt="Front porch — craftsman columns" loading="lazy" /></div>
+    <div class="gallery-slide"><img src="images/exterior-front.jpg" alt="Front entrance" loading="lazy" /></div>
   </div>
   <div class="gallery-dots" id="galleryDots"></div>
   <p class="gallery-hint">← Swipe to browse →</p>
 </section>
 
-<hr class="divider" />
+<hr class="divider-gold" />
 
 
 <!-- ── KEY FEATURES ─────────────────────────────────── -->
-<section class="section">
+<section class="section-alt">
   <h2 class="section-title">Key Features</h2>
   <ul class="features-list">
-    <li>
-      <svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-      <span>Large kitchen with butcher block island &amp; ample counter space</span>
-    </li>
-    <li>
-      <svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-      <span>Single-level open floor plan</span>
-    </li>
-    <li>
-      <svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-      <span>West-facing bedrooms — warm afternoon light</span>
-    </li>
-    <li>
-      <svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-      <span>Private courtyard — perfect for entertaining</span>
-    </li>
-    <li>
-      <svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-      <span>2-car garage with additional storage</span>
-    </li>
-    <li>
-      <svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-      <span>Steps from Venice Canals — iconic LA location</span>
-    </li>
-    <li>
-      <svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-      <span>Timeless 1926 craftsman character</span>
-    </li>
+    <li><svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>Large kitchen with butcher block island &amp; ample counter space</span></li>
+    <li><svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>Single-level open floor plan</span></li>
+    <li><svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>West-facing bedrooms — warm afternoon light</span></li>
+    <li><svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>Private courtyard — perfect for entertaining</span></li>
+    <li><svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>2-car garage with additional storage</span></li>
+    <li><svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>Steps from Venice Canals — iconic LA location</span></li>
+    <li><svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>Timeless 1926 craftsman character</span></li>
   </ul>
 </section>
 
-<hr class="divider" />
+<hr class="divider-gold" />
 
 
 <!-- ── FAQ ──────────────────────────────────────────── -->
 <section class="section">
   <h2 class="section-title">FAQ</h2>
   <div class="faq-list">
-
     <details open>
       <summary>Is the property still available?</summary>
-      <div class="faq-answer">
-        Yes — available for sale and lease. Contact Steven to confirm status and arrange a showing.
-      </div>
+      <div class="faq-answer">Yes — available for sale and lease. Contact Steven to confirm current status and arrange a showing.</div>
     </details>
-
     <details>
       <summary>What is the asking price?</summary>
-      <div class="faq-answer">
-        <strong>$2,195,000</strong> to purchase &nbsp;·&nbsp; <strong>$7,000/month</strong> to lease.
-      </div>
+      <div class="faq-answer"><strong>$2,195,000</strong> to purchase &nbsp;·&nbsp; <strong>$7,000/month</strong> to lease.</div>
     </details>
-
     <details>
       <summary>How do I schedule a showing?</summary>
-      <div class="faq-answer">
-        Call or text <a href="tel:3104338281" style="color:var(--gold)"><strong>310-433-8281</strong></a> — Steven will arrange a private showing at your convenience.
-      </div>
+      <div class="faq-answer">Call or text <a href="tel:3104338281" style="color:var(--gold);font-weight:600;">310-433-8281</a> — Steven will arrange a private showing at your convenience.</div>
     </details>
-
     <details>
       <summary>Is there parking?</summary>
-      <div class="faq-answer">
-        Yes — 2-car garage plus additional driveway space.
-      </div>
+      <div class="faq-answer">Yes — 2-car garage plus additional driveway space.</div>
     </details>
-
     <details>
       <summary>What are the property taxes?</summary>
-      <div class="faq-answer">
-        <!-- ✏️ UPDATE with actual tax info -->
-        Contact Steven for current property tax information.
-      </div>
+      <div class="faq-answer">Contact Steven for current property tax information.</div>
     </details>
-
     <details>
       <summary>Pet-friendly lease?</summary>
-      <div class="faq-answer">
-        <!-- ✏️ UPDATE based on policy -->
-        Pet policy is negotiable — discuss directly with Steven.
-      </div>
+      <div class="faq-answer">Pet policy is negotiable — discuss directly with Steven.</div>
     </details>
-
   </div>
 </section>
 
+<hr class="divider-gold" />
 
-<!-- ── ASK A QUESTION ───────────────────────────────── -->
+
+<!-- ── HAVE A QUESTION ───────────────────────────────── -->
 <section class="ask-section">
   <h2 class="section-title">Have a Question?</h2>
-  <p style="font-size:14px;color:#5a6e88;margin-top:10px;line-height:1.6;">
-    Don't see what you're looking for? Ask anything — we'll reply directly.
-  </p>
-  <form id="questionForm" style="margin-top:18px;" onsubmit="submitQuestion(event)">
+  <p class="ask-sub">Don't see what you're looking for? Ask anything — we'll reply directly.</p>
+  <form id="questionForm" style="margin-top:20px;" onsubmit="submitQuestion(event)">
     <div class="form-row">
       <label>Your Question *</label>
       <textarea name="question" placeholder="What would you like to know?" required></textarea>
@@ -581,12 +594,10 @@
 </section>
 
 
-<!-- ── GET IN TOUCH ─────────────────────────────────── -->
-<section class="contact-section">
+<!-- ── GET IN TOUCH — agent card ────────────────────── -->
+<div class="contact-agent">
   <h2 class="section-title">Get in Touch</h2>
-
   <div class="agent-card">
-    <!-- Logo in avatar circle -->
     <div class="agent-avatar">
       <img src="images/sb_logo.png" alt="SB"
            onerror="this.style.display='none'; this.parentElement.innerHTML='SB';" />
@@ -597,78 +608,83 @@
       <div class="a-lic">Lic. #02225787</div>
     </div>
   </div>
+</div>
 
+<!-- Action buttons — cream-mid, soft and airy -->
+<div class="contact-actions">
   <div class="contact-btn-row">
     <a href="tel:3104338281" class="btn btn-gold">
       <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
       Call Now
     </a>
-    <!-- ✏️ UPDATE email -->
-    <a href="mailto:[YOUR EMAIL]?subject=Property Inquiry" class="btn btn-ghost">
+    <a href="mailto:STEVEN@SPACESANDBEYOND.COM?subject=427%20Howland%20Canal%20%E2%80%93%20Inquiry%20%26%20Showing%20Request" class="btn btn-outline">
       <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
       Email
     </a>
-    <a href="sms:3104338281" class="btn btn-ghost btn-full">
+    <a href="sms:3104338281" class="btn btn-outline btn-full">
       <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
       Text Message
     </a>
   </div>
+</div>
 
-  <!-- LEAD CAPTURE FORM -->
-  <div class="lead-form-wrap">
-    <div class="lead-form-title">Request Info / Schedule a Showing</div>
-    <form id="leadForm" onsubmit="submitLead(event)">
-      <div class="form-row">
-        <label>Your Name *</label>
-        <input type="text" name="name" placeholder="First &amp; last name" required />
-      </div>
-      <div class="form-row">
-        <label>Phone Number</label>
-        <input type="tel" name="phone" inputmode="tel" placeholder="310-555-0000" />
-      </div>
-      <div class="form-row">
-        <label>Email Address</label>
-        <input type="email" name="email" inputmode="email" placeholder="you@email.com" />
-      </div>
-      <div class="form-row">
-        <label>I Am Interested In</label>
-        <select name="interest">
-          <option value="">— Select one —</option>
-          <option value="Buying">Purchasing ($2,195,000)</option>
-          <option value="Leasing">Leasing ($7,000/mo)</option>
-          <option value="Both">Both — Open to either</option>
-          <option value="Just browsing">Just browsing</option>
-        </select>
-      </div>
-      <button type="submit" class="form-submit">Send Request</button>
-      <div class="form-msg" id="leadMsg"></div>
-    </form>
-  </div>
+<!-- Lead form — cream, calm and airy -->
+<div class="contact-form-section">
+  <div class="lead-form-title">Request Info / Schedule a Showing</div>
+  <form id="leadForm" onsubmit="submitLead(event)">
+    <div class="form-row">
+      <label>Your Name *</label>
+      <input type="text" name="leadName" placeholder="First &amp; last name" required />
+    </div>
+    <div class="form-row">
+      <label>Phone Number</label>
+      <input type="tel" name="phone" inputmode="tel" placeholder="310-555-0000" />
+    </div>
+    <div class="form-row">
+      <label>Email Address</label>
+      <input type="email" name="email" inputmode="email" placeholder="you@email.com" />
+    </div>
+    <div class="form-row">
+      <label>I Am Interested In</label>
+      <select name="interest">
+        <option value="">— Select one —</option>
+        <option value="Buying">Purchasing ($2,195,000)</option>
+        <option value="Leasing">Leasing ($7,000/mo)</option>
+        <option value="Both">Both — Open to either</option>
+        <option value="Just browsing">Just browsing</option>
+      </select>
+    </div>
+    <button type="submit" class="form-submit">Send Request</button>
+    <div class="form-msg" id="leadMsg"></div>
+  </form>
+</div>
 
+<!-- Contact details — cream-dark strip -->
+<div class="contact-details">
+  <div class="contact-details-title">Direct Contact</div>
   <div class="contact-info">
     <div class="contact-row">
       <svg class="c-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-      <a href="tel:3104338281">310-433-8281</a>
+      <span class="c-text"><a href="tel:3104338281">(310) 433-8281</a></span>
     </div>
     <div class="contact-row">
       <svg class="c-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-      <!-- ✏️ UPDATE -->
-      <a href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a>
+      <span class="c-text"><a href="mailto:STEVEN@SPACESANDBEYOND.COM?subject=427%20Howland%20Canal%20%E2%80%93%20Inquiry%20%26%20Showing%20Request">STEVEN@SPACESANDBEYOND.COM</a></span>
     </div>
     <div class="contact-row">
       <svg class="c-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-      <!-- ✏️ UPDATE address -->
-      <a href="https://maps.apple.com/?q=[PROPERTY+ADDRESS]" target="_blank">[PROPERTY ADDRESS]</a>
+      <span class="c-text"><a href="https://maps.apple.com/?q=427+Howland+Canal,+Venice,+CA+90291" target="_blank">427 Howland Canal, Venice, CA 90291</a></span>
     </div>
   </div>
-</section>
+</div>
 
 
-<!-- ── FOOTER ───────────────────────────────────────── -->
-<footer>
+<!-- ── FOOTER — light, minimal ──────────────────────── -->
+<footer class="site-footer">
   <p>
-    © 2025 Spaces &amp; Beyond® &nbsp;·&nbsp; Steven Bettencourt &nbsp;·&nbsp; Lic. #02225787<br />
-    310-433-8281 &nbsp;·&nbsp; <a href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a>
+    &copy; 2026 Spaces &amp; Beyond® &nbsp;&middot;&nbsp; Steven Bettencourt &nbsp;&middot;&nbsp; Lic. #02225787<br />
+    <a href="tel:3104338281">(310) 433-8281</a> &nbsp;&middot;&nbsp;
+    <a href="mailto:STEVEN@SPACESANDBEYOND.COM">STEVEN@SPACESANDBEYOND.COM</a>
   </p>
 </footer>
 
@@ -676,11 +692,11 @@
 <!-- ── STICKY BOTTOM BAR ─────────────────────────────── -->
 <div class="sticky-cta" role="navigation" aria-label="Contact agent">
   <a href="tel:3104338281" class="cta-call">
-    <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
     Call Now
   </a>
   <a href="sms:3104338281" class="cta-text">
-    <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
     Text Us
   </a>
 </div>
@@ -688,96 +704,110 @@
 
 <!-- ── SCRIPTS ───────────────────────────────────────── -->
 <script>
-  // ✏️ Replace with your deployed Apps Script URL
   var SHEET_URL = 'https://script.google.com/macros/s/AKfycbzwDoPosZ7712dn6QzfEADDgC1ARGgqAjp8nxUIt04BpIfMrq4FAQ2KqzHLzbt110o0hg/exec';
 
+  /* ── Lead form (Request Info / Schedule a Showing) ── */
   function submitLead(e) {
     e.preventDefault();
     var form = e.target;
     var msg  = document.getElementById('leadMsg');
     var btn  = form.querySelector('.form-submit');
-    btn.disabled = true; btn.textContent = 'Sending…';
+
+    // Collect field values — note: "leadName" avoids conflict with form.name property
+    var leadName = form.elements['leadName'].value.trim();
+    var phone    = form.elements['phone'].value.trim();
+    var email    = form.elements['email'].value.trim();
+    var interest = form.elements['interest'].value;
+
+    btn.disabled = true; btn.textContent = 'Sending\u2026';
     msg.className = 'form-msg'; msg.textContent = '';
+
     fetch(SHEET_URL, {
       method: 'POST', mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        type: 'lead',
-        name: form.name.value.trim(),
-        phone: form.phone.value.trim(),
-        email: form.email.value.trim(),
-        interest: form.interest.value,
+        type:      'lead',
+        name:      leadName,
+        phone:     phone,
+        email:     email,
+        interest:  interest,
         userAgent: navigator.userAgent,
-        referrer: document.referrer || 'direct',
-        page: window.location.href
+        referrer:  document.referrer || 'direct',
+        page:      window.location.href
       })
-    }).then(function () {
+    }).then(function() {
       msg.className = 'form-msg success';
-      msg.textContent = '✓ Received — Steven will be in touch shortly.';
+      msg.textContent = '\u2713 Request received \u2014 Steven will be in touch shortly.';
       form.reset();
-    }).catch(function () {
+    }).catch(function() {
       msg.className = 'form-msg error';
       msg.textContent = 'Could not send. Please call or text directly.';
-    }).finally(function () {
+    }).finally(function() {
       btn.disabled = false; btn.textContent = 'Send Request';
     });
   }
 
+  /* ── Question form ── */
   function submitQuestion(e) {
     e.preventDefault();
     var form = e.target;
     var msg  = document.getElementById('questionMsg');
     var btn  = form.querySelector('.form-submit');
-    btn.disabled = true; btn.textContent = 'Sending…';
+
+    btn.disabled = true; btn.textContent = 'Sending\u2026';
     msg.className = 'form-msg'; msg.textContent = '';
+
     fetch(SHEET_URL, {
       method: 'POST', mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        type: 'question',
-        question: form.question.value.trim(),
-        name: form.qname.value.trim(),
-        contact: form.qcontact.value.trim(),
+        type:      'question',
+        question:  form.elements['question'].value.trim(),
+        name:      form.elements['qname'].value.trim(),
+        contact:   form.elements['qcontact'].value.trim(),
         userAgent: navigator.userAgent,
-        referrer: document.referrer || 'direct',
-        page: window.location.href
+        referrer:  document.referrer || 'direct',
+        page:      window.location.href
       })
-    }).then(function () {
+    }).then(function() {
       msg.className = 'form-msg success';
-      msg.textContent = '✓ Question sent — we\'ll reply directly.';
+      msg.textContent = '\u2713 Question sent \u2014 we\'ll reply directly.';
       form.reset();
-    }).catch(function () {
+    }).catch(function() {
       msg.className = 'form-msg error';
       msg.textContent = 'Could not send. Please call or text directly.';
-    }).finally(function () {
+    }).finally(function() {
       btn.disabled = false; btn.textContent = 'Send My Question';
     });
   }
 
-  // Gallery dots
-  (function () {
-    var track  = document.getElementById('galleryTrack');
-    var dotsEl = document.getElementById('galleryDots');
-    var slides = track ? Array.from(track.querySelectorAll('.gallery-slide')) : [];
+  /* ── Gallery dots ── */
+  (function() {
+    var track   = document.getElementById('galleryTrack');
+    var dotsEl  = document.getElementById('galleryDots');
+    var slides  = track ? Array.from(track.querySelectorAll('.gallery-slide')) : [];
     if (!slides.length) return;
-    slides.forEach(function (_, i) {
+
+    slides.forEach(function(_, i) {
       var d = document.createElement('div');
       d.className = 'dot' + (i === 0 ? ' active' : '');
-      d.addEventListener('click', function () {
+      d.addEventListener('click', function() {
         slides[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
       });
       dotsEl.appendChild(d);
     });
+
     var dots = Array.from(dotsEl.querySelectorAll('.dot'));
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          var idx = slides.indexOf(e.target);
-          dots.forEach(function (d, i) { d.classList.toggle('active', i === idx); });
+    var obs  = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var idx = slides.indexOf(entry.target);
+          dots.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
         }
       });
     }, { root: track, threshold: 0.6 });
-    slides.forEach(function (s) { obs.observe(s); });
+
+    slides.forEach(function(s) { obs.observe(s); });
   })();
 </script>
 
