@@ -132,7 +132,7 @@
     }
     .ph-cell:last-child { border-right: none; }
     .ph-label {
-      display: block; font-family: var(--sans); font-size: 11px;
+      display: block; font-family: var(--sans); font-size: 13px;
       letter-spacing: 3px; text-transform: uppercase; color: var(--gold-text);
       margin-bottom: 8px; font-weight: 700;
     }
@@ -163,7 +163,7 @@
       color: var(--navy-deep); line-height: 1;
     }
     .stat-lbl {
-      display: block; font-family: var(--sans); font-size: 11px;
+      display: block; font-family: var(--sans); font-size: 13px;
       letter-spacing: 1.5px; text-transform: uppercase;
       color: var(--gold-text); margin-top: 5px; font-weight: 600;
     }
@@ -193,12 +193,12 @@
     }
     .spec-cell { background: var(--cream); padding: 15px 16px; }
     .s-lbl {
-      display: block; font-family: var(--sans); font-size: 11px;
+      display: block; font-family: var(--sans); font-size: 13px;
       letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-text);
-      margin-bottom: 5px; font-weight: 700;
+      margin-bottom: 6px; font-weight: 700;
     }
     .s-val {
-      font-family: var(--sans); font-size: 17px;
+      font-family: var(--sans); font-size: 18px;
       font-weight: 600; color: var(--navy-deep);
     }
     .spec-cell.full { grid-column: 1 / -1; }
@@ -234,8 +234,8 @@
     .features-list { list-style: none; display: flex; flex-direction: column; gap: 13px; margin-top: 18px; }
     .features-list li {
       display: flex; align-items: flex-start; gap: 11px;
-      font-family: var(--sans); font-size: 16px; font-weight: 500;
-      color: var(--body-text); line-height: 1.5;
+      font-family: var(--sans); font-size: 18px; font-weight: 500;
+      color: var(--body-text); line-height: 1.55;
     }
     .feat-icon { width: 15px; height: 15px; flex-shrink: 0; margin-top: 3px; color: var(--gold); }
 
@@ -249,10 +249,10 @@
     details:last-child { border-bottom: none; }
     summary {
       list-style: none; cursor: pointer;
-      padding: 16px 18px; font-family: var(--sans); font-size: 16px; font-weight: 600;
+      padding: 17px 18px; font-family: var(--sans); font-size: 18px; font-weight: 600;
       color: var(--body-text); display: flex;
       justify-content: space-between; align-items: center; gap: 12px;
-      background: var(--cream); min-height: 54px;
+      background: var(--cream); min-height: 58px;
       -webkit-tap-highlight-color: transparent; user-select: none;
     }
     summary::-webkit-details-marker { display: none; }
@@ -263,7 +263,7 @@
     details[open] summary::after { content: '×'; }
     details[open] summary { background: var(--cream-dark); }
     .faq-answer {
-      padding: 0 18px 18px; font-family: var(--sans); font-size: 16px; font-weight: 400;
+      padding: 0 18px 20px; font-family: var(--sans); font-size: 18px; font-weight: 400;
       color: var(--body-text); line-height: 1.65; background: var(--cream-dark);
     }
 
@@ -297,6 +297,19 @@
     .a-brand { font-family: var(--sans); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-text); margin-top: 4px; font-weight: 600; }
     .a-lic { font-family: var(--sans); font-size: 10px; color: var(--blue-soft); margin-top: 3px; }
 
+    /* CTA strip — between agent card and buttons */
+    .contact-cta {
+      background: var(--navy);
+      border-top: 2px solid var(--gold);
+      padding: 18px 20px;
+      text-align: center;
+    }
+    .contact-cta-text {
+      font-family: var(--sans); font-size: 18px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: #f0ece4;
+    }
+
     /* Action buttons — soft cream-mid zone */
     .contact-actions {
       background: var(--cream-mid);
@@ -326,15 +339,15 @@
       border-top: 1px solid rgba(197,165,108,0.3);
     }
     .lead-form-title {
-      font-family: var(--sans); font-size: 16px; letter-spacing: 0;
+      font-family: var(--sans); font-size: 18px; letter-spacing: 0;
       text-transform: none; color: var(--body-text); margin-bottom: 18px;
       font-weight: 600;
     }
     .form-row { margin-bottom: 14px; }
     .form-row label {
-      display: block; font-family: var(--sans); font-size: 10px;
-      letter-spacing: 3px; text-transform: uppercase; color: var(--blue-soft);
-      margin-bottom: 6px; font-weight: 500;
+      display: block; font-family: var(--sans); font-size: 12px;
+      letter-spacing: 2px; text-transform: uppercase; color: var(--navy-deep);
+      margin-bottom: 6px; font-weight: 700;
     }
     .form-row input,
     .form-row select,
@@ -392,7 +405,7 @@
     .contact-info { display: flex; flex-direction: column; gap: 14px; }
     .contact-row { display: flex; align-items: center; gap: 13px; }
     .c-icon { width: 17px; height: 17px; color: var(--gold); flex-shrink: 0; }
-    .c-text { font-family: var(--sans); font-size: 15px; font-weight: 500; color: var(--body-text); }
+    .c-text { font-family: var(--sans); font-size: 17px; font-weight: 500; color: var(--body-text); }
     .c-text a { color: var(--body-text); }
 
     /* ── FOOTER — light, soft ───────────────────── */
@@ -559,52 +572,29 @@
       <div class="faq-answer">Yes — available for sale and lease. Contact Steven to confirm current status and arrange a showing.</div>
     </details>
     <details>
-      <summary>What is the asking price?</summary>
-      <div class="faq-answer"><strong>$2,195,000</strong> to purchase &nbsp;·&nbsp; <strong>$7,000/month</strong> to lease.</div>
+      <summary>Is the property available to tour?</summary>
+      <div class="faq-answer">Yes — private tours are available by appointment. Contact Steven directly to arrange a convenient time for an in-person showing.</div>
     </details>
     <details>
       <summary>How do I schedule a showing?</summary>
-      <div class="faq-answer">Call or text <a href="tel:3104338281" style="color:var(--gold);font-weight:600;">310-433-8281</a> — Steven will arrange a private showing at your convenience.</div>
+      <div class="faq-answer">You can call, text, or email Steven at any time. Use the form below or reach him directly at <a href="tel:3104338281" style="color:var(--gold-text);font-weight:600;">310-433-8281</a> or <a href="mailto:STEVEN@SPACESANDBEYOND.COM" style="color:var(--gold-text);font-weight:600;">STEVEN@SPACESANDBEYOND.COM</a>.</div>
     </details>
     <details>
-      <summary>Is there parking?</summary>
-      <div class="faq-answer">Yes — 2-car garage plus additional driveway space.</div>
+      <summary>Is financing information available?</summary>
+      <div class="faq-answer">Yes — Steven can connect you with trusted lending partners who specialize in high-value residential transactions. Contact him directly for referrals and guidance.</div>
     </details>
     <details>
-      <summary>What are the property taxes?</summary>
-      <div class="faq-answer">Contact Steven for current property tax information.</div>
+      <summary>Are disclosures available upon request?</summary>
+      <div class="faq-answer">Yes — all property disclosures are available to qualified buyers upon request. Please reach out to Steven to begin the process.</div>
     </details>
     <details>
-      <summary>Pet-friendly lease?</summary>
-      <div class="faq-answer">Pet policy is negotiable — discuss directly with Steven.</div>
+      <summary>Who do I contact for more details?</summary>
+      <div class="faq-answer">Steven Bettencourt is your point of contact for all questions. Reach him at <a href="tel:3104338281" style="color:var(--gold-text);font-weight:600;">310-433-8281</a>, by email at <a href="mailto:STEVEN@SPACESANDBEYOND.COM" style="color:var(--gold-text);font-weight:600;">STEVEN@SPACESANDBEYOND.COM</a>, or use the form below.</div>
     </details>
   </div>
 </section>
 
 <hr class="divider-gold" />
-
-
-<!-- ── HAVE A QUESTION ───────────────────────────────── -->
-<section class="ask-section">
-  <h2 class="section-title">Have a Question?</h2>
-  <p class="ask-sub">Don't see what you're looking for? Ask anything — we'll reply directly.</p>
-  <form id="questionForm" style="margin-top:20px;" onsubmit="submitQuestion(event)">
-    <div class="form-row">
-      <label>Your Question *</label>
-      <textarea name="question" placeholder="What would you like to know?" required></textarea>
-    </div>
-    <div class="form-row">
-      <label>Your Name</label>
-      <input type="text" name="qname" placeholder="First &amp; last name" />
-    </div>
-    <div class="form-row">
-      <label>Phone or Email *</label>
-      <input type="text" name="qcontact" placeholder="310-555-0000 or you@email.com" required />
-    </div>
-    <button type="submit" class="form-submit">Send My Question</button>
-    <div class="form-msg" id="questionMsg"></div>
-  </form>
-</section>
 
 
 <!-- ── GET IN TOUCH — agent card ────────────────────── -->
@@ -621,6 +611,11 @@
       <div class="a-lic">Lic. #02225787</div>
     </div>
   </div>
+</div>
+
+<!-- CTA banner — between agent card and action buttons -->
+<div class="contact-cta">
+  <span class="contact-cta-text">Schedule a Showing Today!</span>
 </div>
 
 <!-- Action buttons — cream-mid, soft and airy -->
@@ -643,7 +638,7 @@
 
 <!-- Lead form — cream, calm and airy -->
 <div class="contact-form-section">
-  <div class="lead-form-title">Request Info / Schedule a Showing</div>
+  <div class="lead-form-title">Schedule a Showing</div>
   <form id="leadForm" onsubmit="submitLead(event)">
     <div class="form-row">
       <label>Your Name *</label>
