@@ -421,6 +421,50 @@
     .c-text { font-family: var(--sans); font-size: 17px; font-weight: 500; color: var(--body-text); }
     .c-text a { color: var(--body-text); }
 
+    /* ── VCARD CARD ─────────────────────────────── */
+    .vcard-wrap {
+      margin-top: 22px;
+      border: 1px solid rgba(197,165,108,0.45);
+      border-radius: 6px; overflow: hidden;
+    }
+    .vcard-card {
+      background: var(--navy);
+      padding: 20px 20px 16px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .vcard-avatar {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid var(--gold);
+      flex-shrink: 0; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .vcard-avatar img { width: 100%; height: 100%; object-fit: contain; padding: 5px; }
+    .vcard-info { flex: 1; }
+    .vcard-name  { font-family: var(--sans); font-size: 16px; font-weight: 600; color: #f0ece4; letter-spacing: 0.3px; }
+    .vcard-title { font-family: var(--sans); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-top: 3px; }
+    .vcard-phone { font-family: var(--sans); font-size: 13px; color: rgba(240,236,228,0.7); margin-top: 5px; }
+    .vcard-email { font-family: var(--sans); font-size: 11px; color: rgba(240,236,228,0.5); margin-top: 2px; word-break: break-all; }
+    .vcard-tag {
+      background: rgba(197,165,108,0.12);
+      border-top: 1px solid rgba(197,165,108,0.25);
+      padding: 8px 20px;
+      font-family: var(--sans); font-size: 10px; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(240,236,228,0.45);
+      text-align: right;
+    }
+    .btn-vcard {
+      display: flex; align-items: center; justify-content: center; gap: 9px;
+      width: 100%; padding: 15px;
+      background: var(--gold); color: var(--navy);
+      font-family: var(--sans); font-size: 13px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      border: none; text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: opacity 0.15s;
+    }
+    .btn-vcard:active { opacity: 0.8; }
+
     /* ── FOOTER — light, soft ───────────────────── */
     .site-footer {
       background: var(--cream-mid);
@@ -694,6 +738,27 @@
       <svg class="c-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
       <span class="c-text"><a href="https://maps.apple.com/?q=427+Howland+Canal,+Venice,+CA+90291" target="_blank">427 Howland Canal, Venice, CA 90291</a></span>
     </div>
+  </div>
+
+  <!-- vCard contact card -->
+  <div class="vcard-wrap">
+    <div class="vcard-card">
+      <div class="vcard-avatar">
+        <img src="images/sb_logo.png" alt="SB"
+             onerror="this.style.display='none'; this.parentElement.innerHTML='SB';" />
+      </div>
+      <div class="vcard-info">
+        <div class="vcard-name">Steven Bettencourt</div>
+        <div class="vcard-title">Spaces &amp; Beyond®</div>
+        <div class="vcard-phone">(310) 433-8281</div>
+        <div class="vcard-email">STEVEN@SPACESANDBEYOND.COM</div>
+      </div>
+    </div>
+    <div class="vcard-tag">vCard · Digital Contact</div>
+    <a href="steven-bettencourt.vcf" download class="btn-vcard">
+      <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
+      Save to My Contacts
+    </a>
   </div>
 </div>
 
