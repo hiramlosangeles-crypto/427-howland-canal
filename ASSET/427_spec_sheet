@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>427 Howland Canal — Property Specification Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Instrument+Sans:wght@400;500;600&family=Jura:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  /* ─── DESIGN TOKENS ─────────────────────────────────────── */
+  :root {
+    --navy:   #1C2B3A;
+    --cream:  #EDE8DC;
+    --gold:   #C9A55A;
+    --mid:    #8A9BA8;
+    --rule:   #D5CEBE;
+    --photo:  #C8D5DC;
+    --white:  #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--navy);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── PAGE WRAPPER ───────────────────────────────────────── */
+  .page {
+    max-width: 816px;
+    margin: 0 auto;
+    background: var(--cream);
+    position: relative;
+  }
+
+  /* ─── NAVBAR ─────────────────────────────────────────────── */
+  .navbar {
+    background: var(--navy);
+    height: 54px;
+    display: flex;
+    align-items: center;
+    padding: 0 28px;
+    gap: 12px;
+  }
+  .navbar-logo {
+    width: 28px; height: 28px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .navbar-logo span {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    color: var(--navy);
+  }
+  .navbar-brand {
+    font-family: 'Jura', 'Courier New', monospace;
+    font-size: 9.5px;
+    color: var(--white);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .navbar-contact {
+    margin-left: auto;
+    font-family: 'Jura', 'Courier New', monospace;
+    font-size: 8px;
+    color: var(--gold);
+    letter-spacing: 0.8px;
+    text-align: right;
+  }
+
+  /* ─── HERO ───────────────────────────────────────────────── */
+  .hero {
+    background: var(--photo);
+    height: 236px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-placeholder {
+    border: 0.6px solid #8AABB8;
+    position: absolute;
+    inset: 23px 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-placeholder span {
+    font-family: 'Jura', 'Courier New', monospace;
+    font-size: 8.5px;
+    color: #8AABB8;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  /* ── spec ribbon over hero bottom ── */
+  .hero-tag {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(28,43,58,0.82);
+    padding: 6px 46px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hero-tag-badge {
+    font-family: 'Jura', monospace;
+    font-size: 7px;
+    letter-spacing: 1.8px;
+    color: var(--gold);
+    text-transform: uppercase;
+    border: 0.6px solid var(--gold);
+    padding: 2px 6px;
+    white-space: nowrap;
+  }
+  .hero-tag-dot { color: var(--gold); font-size: 6px; }
+  .hero-tag-id {
+    font-family: 'Jura', monospace;
+    font-size: 7.5px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.8px;
+    margin-left: auto;
+  }
+
+  /* ─── ADDRESS BLOCK ──────────────────────────────────────── */
+  .address-block {
+    text-align: center;
+    padding: 26px 46px 12px;
+  }
+  .address-district {
+    font-family: 'Jura', 'Courier New', monospace;
+    font-size: 8px;
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .address-headline {
+    font-family: 'Italiana', Georgia, serif;
+    font-size: 46px;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .address-rule {
+    width: 68px;
+    height: 3px;
+    background: var(--gold);
+    margin: 0 auto 10px;
+  }
+  .address-sub {
+    font-family: 'Jura', 'Courier New', monospace;
+    font-size: 10px;
+    color: var(--mid);
+    letter-spacing: 0.8px;
+  }
+
+  /* ─── STAT TILES ─────────────────────────────────────────── */
+  .stat-tiles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 16px 46px 0;
+  }
+  .tile {
+    background: var(--navy);
+    padding: 14px 10px 12px;
+    text-align: center;
+    position: relative;
+  }
+  .tile + .tile { border-left: 1px solid rgba(255,255,255,0.08); }
+  .tile-value {
+    font-family: 'Italiana', Georgia, serif;
+    font-size: 22px;
+    color: var(--white);
+    line-height: 1.1;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .tile-label {
+    font-family: 'Jura', 'Courier New', monospace;
+    font-size: 7px;
+    color: var(--gold);
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  /* second row tiles — lighter */
+  .stat-tiles-2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 3px 46px 0;
+  }
+  .tile-2 {
+    background: rgba(28,43,58,0.08);
+    border-top: 2px solid var(--gold);
+    padding: 10px 10px 10px;
+    text-align: center;
+  }
+  .tile-2 + .tile-2 { border-left: 1px solid var(--rule); }
+  .tile-2-value {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--navy);
+    display: block;
+    margin-bottom: 3px;
+  }
+  .tile-2-label {
+    font-family: 'Jura', 'Courier New', monospace;
+    font-size: 7px;
+    color: var(--mid);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  /* ─── DIVIDER ─────────────────────────────────────────────── */
+  .divider {
+    height: 0.6px;
+    background: var(--rule);
+    margin: 22px 46px 0;
+  }
+
+  /* ─── BODY GRID ──────────────────────────────────────────── */
+  .body-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+    padding: 24px 46px 0;
+  }
+
+  /* ─── SECTION ─────────────────────────────────────────────── */
+  .section { margin-bottom: 28px; }
+  .section-title {
+    font-family: 'Jura', 'Courier New', monospace;
+    font-size: 8.5px;
+    color: var(--navy);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .section-rule {
+    width: 28px; height: 2.5px;
+    background: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  /* ─── DATA ROWS (spec-sheet style) ──────────────────────── */
+  .data-row {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 7px;
+  }
+  .data-label {
+    font-family: 'Jura', 'Courier New', monospace;
+    font-size: 7.5px;
+    color: var(--mid);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .data-dots {
+    flex: 1;
+    border-bottom: 0.5px dashed var(--rule);
+    margin-bottom: 2px;
+    min-width: 8px;
+  }
+  .data-value {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--navy);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* ─── BULLET ITEMS ───────────────────────────────────────── */
+  .bullet-list { list-style: none; padding: 0; }
+  .bullet-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 9.5px;
+    color: var(--navy);
+    line-height: 1.45;
+  }
+  .bullet-list li::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: var(--gold);
+    border-radius: 1px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ─── TAG CHIPS ──────────────────────────────────────────── */
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 4px;
+  }
+  .tag {
+    font-family: 'Jura', monospace;
+    font-size: 7px;
+    letter-spacing: 0.6px;
+    color: var(--mid);
+    border: 0.5px solid var(--rule);
+    padding: 2px 6px;
+    text-transform: uppercase;
+  }
+
+  /* ─── FULL-WIDTH SECTION ─────────────────────────────────── */
+  .full-section {
+    padding: 0 46px;
+    margin-bottom: 24px;
+  }
+
+  /* ─── ABOUT BLURB ────────────────────────────────────────── */
+  .about-text {
+    font-family: 'Italiana', Georgia, serif;
+    font-size: 11px;
+    font-style: italic;
+    color: var(--navy);
+    line-height: 1.7;
+  }
+  .about-tags {
+    font-family: 'Jura', monospace;
+    font-size: 8px;
+    color: var(--mid);
+    letter-spacing: 0.4px;
+    margin-top: 8px;
+  }
+
+  /* ─── CONTACT ────────────────────────────────────────────── */
+  .contact-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+    padding: 0 46px 0;
+  }
+  .contact-name {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .contact-brokerage {
+    font-family: 'Jura', monospace;
+    font-size: 8px;
+    color: var(--gold);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 3px 0;
+  }
+  .contact-lic {
+    font-family: 'Jura', monospace;
+    font-size: 7.5px;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .contact-detail {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 10px;
+    color: var(--navy);
+    margin-bottom: 3px;
+  }
+  .contact-website {
+    font-family: 'Italiana', Georgia, serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--navy);
+    margin-top: 6px;
+    display: block;
+  }
+
+  /* ─── FOOTER ─────────────────────────────────────────────── */
+  .footer {
+    background: var(--navy);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+  }
+  .footer span {
+    font-family: 'Jura', 'Courier New', monospace;
+    font-size: 7px;
+    color: var(--gold);
+    letter-spacing: 0.4px;
+    text-align: center;
+  }
+
+  /* ─── PRINT / MEDIA ──────────────────────────────────────── */
+  @media print {
+    body { background: var(--cream); }
+    .page { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar">
+    <div class="navbar-logo"><span>S</span></div>
+    <span class="navbar-brand">Spaces &amp; Beyond®</span>
+    <span class="navbar-contact">STEVEN BETTENCOURT &nbsp;·&nbsp; 310-433-8281 &nbsp;·&nbsp; Lic. #02225787</span>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <div class="hero">
+    <div class="hero-placeholder">
+      <span>Replace with Main Property Photo — hero.jpg</span>
+    </div>
+    <div class="hero-tag">
+      <span class="hero-tag-badge">For Sale</span>
+      <span class="hero-tag-dot">·</span>
+      <span class="hero-tag-badge">Single Family Residence</span>
+      <span class="hero-tag-dot">·</span>
+      <span class="hero-tag-badge">Bungalow · Cottage · Craftsman</span>
+      <span class="hero-tag-id">APN / ZPID: 20444000 &nbsp;·&nbsp; Zoning: LARW1</span>
+    </div>
+  </div>
+
+  <!-- ── ADDRESS BLOCK ── -->
+  <div class="address-block">
+    <div class="address-district">Venice Canal District &nbsp;·&nbsp; Los Angeles, California</div>
+    <div class="address-headline">427 Howland Canal</div>
+    <div class="address-rule"></div>
+    <div class="address-sub">Venice, California &nbsp; 90291</div>
+  </div>
+
+  <!-- ── STAT TILES ROW 1 ── -->
+  <div class="stat-tiles">
+    <div class="tile">
+      <span class="tile-value">$2,395,000</span>
+      <span class="tile-label">List Price</span>
+    </div>
+    <div class="tile">
+      <span class="tile-value">880</span>
+      <span class="tile-label">Living Area (Sq Ft)</span>
+    </div>
+    <div class="tile">
+      <span class="tile-value">$2,722</span>
+      <span class="tile-label">Price / Sq Ft</span>
+    </div>
+    <div class="tile">
+      <span class="tile-value">1926</span>
+      <span class="tile-label">Year Built</span>
+    </div>
+  </div>
+
+  <!-- ── STAT TILES ROW 2 ── -->
+  <div class="stat-tiles-2">
+    <div class="tile-2">
+      <span class="tile-2-value">2 BD</span>
+      <span class="tile-2-label">Bedrooms</span>
+    </div>
+    <div class="tile-2">
+      <span class="tile-2-value">1 BA</span>
+      <span class="tile-2-label">Full Bath</span>
+    </div>
+    <div class="tile-2">
+      <span class="tile-2-value">2 + 2</span>
+      <span class="tile-2-label">Garage + Drive</span>
+    </div>
+    <div class="tile-2">
+      <span class="tile-2-value">1 Story</span>
+      <span class="tile-2-label">Stories</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── BODY GRID ── -->
+  <div class="body-grid">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <!-- STRUCTURAL SPECS -->
+      <div class="section">
+        <div class="section-title">Structural &amp; Site Data</div>
+        <div class="section-rule"></div>
+
+        <div class="data-row">
+          <span class="data-label">Property Type</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Single Family Residence</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Architectural Style</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Bungalow / Cottage / Craftsman</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Year Built</span>
+          <span class="data-dots"></span>
+          <span class="data-value">1926</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Stories</span>
+          <span class="data-dots"></span>
+          <span class="data-value">1</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Living Area</span>
+          <span class="data-dots"></span>
+          <span class="data-value">880 sq ft</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Lot Size (Sq Ft)</span>
+          <span class="data-dots"></span>
+          <span class="data-value">2,849</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Lot Size (Acres)</span>
+          <span class="data-dots"></span>
+          <span class="data-value">0.0654 ac</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Lot Source</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Public Records</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Zoning</span>
+          <span class="data-dots"></span>
+          <span class="data-value">LARW1</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Density</span>
+          <span class="data-dots"></span>
+          <span class="data-value">0–1 Unit / Acre</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Fencing</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Wood — Good Condition</span>
+        </div>
+      </div>
+
+      <!-- INTERIOR SPECS -->
+      <div class="section">
+        <div class="section-title">Interior Specifications</div>
+        <div class="section-rule"></div>
+
+        <div class="data-row">
+          <span class="data-label">Bedrooms</span>
+          <span class="data-dots"></span>
+          <span class="data-value">2 — All Down</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Bathrooms</span>
+          <span class="data-dots"></span>
+          <span class="data-value">1 Full</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Fireplace</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Yes — Gas</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Flooring</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Bamboo / Tile</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Countertops</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Granite / Stone</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Layout</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Open Floorplan</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Lighting</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Recessed</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Eating Areas</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Breakfast Bar · L-Shape Dining</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Storage</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Yes</span>
+        </div>
+      </div>
+
+      <!-- ROOMS -->
+      <div class="section">
+        <div class="section-title">Rooms &amp; Areas</div>
+        <div class="section-rule"></div>
+        <div class="tag-cloud">
+          <span class="tag">Kitchen</span>
+          <span class="tag">Living Room</span>
+          <span class="tag">Main Floor Bedroom</span>
+          <span class="tag">All Bedrooms Down</span>
+          <span class="tag">Office</span>
+          <span class="tag">Attic</span>
+        </div>
+      </div>
+
+    </div><!-- /LEFT -->
+
+    <!-- RIGHT COLUMN -->
+    <div>
+
+      <!-- MECHANICAL -->
+      <div class="section">
+        <div class="section-title">Mechanical &amp; Systems</div>
+        <div class="section-rule"></div>
+
+        <div class="data-row">
+          <span class="data-label">Heating Fuel</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Natural Gas</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Cooling</span>
+          <span class="data-dots"></span>
+          <span class="data-value">None</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Water Heater</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Gas — Energy Star Rated</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Utilities</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Overhead</span>
+        </div>
+      </div>
+
+      <!-- APPLIANCES -->
+      <div class="section">
+        <div class="section-title">Appliances</div>
+        <div class="section-rule"></div>
+        <div class="tag-cloud">
+          <span class="tag">Built-In Range</span>
+          <span class="tag">Gas Cooktop</span>
+          <span class="tag">Gas Oven</span>
+          <span class="tag">Gas Range</span>
+          <span class="tag">Dishwasher</span>
+          <span class="tag">Refrigerator</span>
+          <span class="tag">Icemaker</span>
+          <span class="tag">Disposal</span>
+          <span class="tag">Energy Star Appliances</span>
+          <span class="tag">Water Line to Fridge</span>
+          <span class="tag">Gas Water Heater</span>
+          <span class="tag">Energy Star Water Heater</span>
+        </div>
+      </div>
+
+      <!-- PARKING -->
+      <div class="section">
+        <div class="section-title">Parking</div>
+        <div class="section-rule"></div>
+
+        <div class="data-row">
+          <span class="data-label">Garage</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Detached — 2 Spaces</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Garage Config</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Two Doors — Rear Facing</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Driveway</span>
+          <span class="data-dots"></span>
+          <span class="data-value">2 Spaces — Concrete — Level</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Additional</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Guest · Off-Street · Oversized · Tandem</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Total Spaces</span>
+          <span class="data-dots"></span>
+          <span class="data-value">4</span>
+        </div>
+      </div>
+
+      <!-- LOT FEATURES -->
+      <div class="section">
+        <div class="section-title">Lot Features</div>
+        <div class="section-rule"></div>
+
+        <div class="data-row">
+          <span class="data-label">Views</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Canal · Bridge(s) · Water · Courtyard</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Street Type</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Walking Street — Paved</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Landscaping</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Garden — Treed Lot — Yard</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Sprinklers</span>
+          <span class="data-dots"></span>
+          <span class="data-value">None</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Transit / Parks</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Near Public Transit · Park Nearby</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Lot Level</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Level with Street</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Courtyard</span>
+          <span class="data-dots"></span>
+          <span class="data-value">Private — Back Yard</span>
+        </div>
+      </div>
+
+    </div><!-- /RIGHT -->
+
+  </div><!-- /body-grid -->
+
+  <!-- ── DIVIDER ── -->
+  <div class="divider"></div>
+
+  <!-- ── CONTACT + ABOUT ── -->
+  <div class="contact-block" style="margin-top:24px; margin-bottom: 28px;">
+    <div>
+      <div class="section-title">Property Note</div>
+      <div class="section-rule"></div>
+      <p class="about-text">
+        A rare single-level canal-front residence built in 1926, set on Venice's landmark walking-street canal. The Bungalow-Craftsman footprint delivers an open plan, gas fireplace, and bamboo floors within immediate reach of Abbott Kinney, the beach, and the broader canal network.
+      </p>
+      <div class="about-tags" style="margin-top:12px;">
+        Open floorplan &nbsp;·&nbsp; West-facing bedrooms &nbsp;·&nbsp; Private courtyard &nbsp;·&nbsp; 2-car detached garage &nbsp;·&nbsp; 880 sq ft interior
+      </div>
+    </div>
+    <div>
+      <div class="section-title">Listing Agent</div>
+      <div class="section-rule"></div>
+      <div class="contact-name">Steven Bettencourt</div>
+      <div class="contact-brokerage">Spaces &amp; Beyond®</div>
+      <div class="contact-lic">Lic. #02225787</div>
+      <div class="contact-detail">310-433-8281</div>
+      <div class="contact-detail">steven@spacesandbeyond.com</div>
+      <a class="contact-website" href="https://427howlandcanal.com">427howlandcanal.com</a>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <div class="footer">
+    <span>This sheet is for informational purposes only. All figures subject to verification. Buyer to conduct independent due diligence. &nbsp;·&nbsp; Managed by Spaces &amp; Beyond™</span>
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>
