@@ -721,39 +721,68 @@
     </a>
   </div>
 </div>
+ })();
 
-<!-- Lead form — cream, calm and airy -->
-<div class="contact-form-section">
-  <div class="lead-form-title">Schedule a Showing</div>
-  <form id="leadForm" onsubmit="submitLead(event)">
-    <div class="form-row">
-      <label>Your Name *</label>
-      <input type="text" name="leadName" placeholder="First &amp; last name" required />
-    </div>
-    <div class="form-row">
-      <label>Phone Number</label>
-      <input type="tel" name="phone" inputmode="tel" placeholder="310-555-0000" />
-    </div>
-    <div class="form-row">
-      <label>Email Address</label>
-      <input type="email" name="email" inputmode="email" placeholder="you@email.com" />
-    </div>
-    <div class="form-row">
-      <label>I Am Interested In</label>
-      <select name="interest">
-        <option value="">— Select one —</option>
-        <option value="Buying">Purchasing ($2,195,000)</option>
-        <option value="Leasing">Leasing ($7,000/mo)</option>
-        <option value="Both">Both — Open to either</option>
-        <option value="Just browsing">Just browsing</option>
-      </select>
-    </div>
-    <button type="submit" class="form-submit">Send Request</button>
-    <div class="form-msg" id="leadMsg"></div>
-  </form>
-</div>
+  // ── Lead form submission ──────────────────────────
+  function submitLead(event) {
+    event.preventDefault();
+    var form     = document.getElementById('leadForm');
+    var btn      = form.querySelector('button[type="submit"]');
+    var msg      = document.getElementById('leadMsg');
+    var ENDPOINT = 'https://script.google.com/macros/s/AKfycbzwDoPosZ7712dn6QzfEADDgC1ARGgqAjp8nxUIt04BpIfMrq4FAQ2KqzHLzbt110o0hg/exec';
 
+    btn.disabled    = true;
+    btn.textContent = 'Sending…';
 
+    var payload = {
+      type:      'lead',
+      name:      form.elements['leadName'].value.trim(),
+      phone:     form.elements['phone'].value.trim(),
+      email:     form.elements['email'].value.trim(),
+      interest:  form.elements['interest'].value,
+      userAgent: navigator.userAgent,
+      referrer:  document.referrer,
+      page:      window.location.href
+    };
+
+    fetch(ENDPOINT, {
+      method:  'POST',
+      body:    JSON.stringify(payload),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(function() {
+      msg.textContent  = 'Thank you — Steven will be in touch shortly.';
+      msg.style.color  = '#c5a56c';
+      form.reset();
+      btn.disabled     = false;
+      btn.textContent  = 'Send Request';
+    })
+    .catch(function() {
+      msg.textContent  = 'Something went wrong. Please call 310-433-8281.';
+      msg.style.color  = '#c0392b';
+      btn.disabled     = false;
+      btn.textContent  = 'Send Request';
+    });
+  }
+
+  // ── Phone auto-format: (310) 555-0000 ────────────
+  var phoneInput = document.querySelector('[name="phone"]');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function(e) {
+      var val = e.target.value.replace(/\D/g, '').substring(0, 10);
+      if (val.length >= 7) {
+        val = '(' + val.substring(0,3) + ') ' + val.substring(3,6) + '-' + val.substring(6);
+      } else if (val.length >= 4) {
+        val = '(' + val.substring(0,3) + ') ' + val.substring(3);
+      } else if (val.length > 0) {
+        val = '(' + val;
+      }
+      e.target.value = val;
+    });
+  }
+
+</script>
+  
 <!-- Contact details — cream-dark strip -->
 <div class="contact-details">
   <div class="contact-details-title">Direct Contact</div>
