@@ -317,6 +317,22 @@
     isOpenHouse ? 'Open House Sign-In' : 'Private Showing Sign-In';
   document.getElementById('formSub').textContent = 'Please sign in';
 
+  // Phone auto-format → (310) 555-0000
+  document.getElementById('phone').addEventListener('input', function(e) {
+    var digits = this.value.replace(/\D/g, '').substring(0, 10);
+    var fmt = '';
+    if (digits.length === 0) {
+      fmt = '';
+    } else if (digits.length <= 3) {
+      fmt = '(' + digits;
+    } else if (digits.length <= 6) {
+      fmt = '(' + digits.substring(0,3) + ') ' + digits.substring(3);
+    } else {
+      fmt = '(' + digits.substring(0,3) + ') ' + digits.substring(3,6) + '-' + digits.substring(6);
+    }
+    this.value = fmt;
+  });
+
   // Form submit
   document.getElementById('signinForm').addEventListener('submit', function(e) {
     e.preventDefault();
