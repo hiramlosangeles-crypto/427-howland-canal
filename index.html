@@ -109,16 +109,22 @@
     }
     .hero-overlay {
       position: absolute; bottom: 0; left: 0; right: 0;
-      background: linear-gradient(to top, rgba(20,35,55,0.96) 0%, rgba(20,35,55,0.75) 38%, transparent 70%);
-      padding: 20px 20px 22px;
+      background: linear-gradient(to top, rgba(20,35,55,0.85) 0%, rgba(20,35,55,0.3) 45%, transparent 70%);
+      padding: 18px 20px 20px;
       display: flex; flex-direction: column; justify-content: flex-end;
     }
     .hero-address {
       font-family: var(--serif);
-      font-size: clamp(26px, 7vw, 38px);
-      font-weight: 600; color: #fff; line-height: 1.15;
-      text-shadow: 0 2px 14px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.5);
-      margin-bottom: 14px;
+      font-size: clamp(28px, 7.5vw, 42px);
+      font-weight: 700; color: #fff; line-height: 1.2;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8);
+      margin-bottom: 16px;
+      background: rgba(20,35,55,0.72);
+      display: inline-block;
+      padding: 10px 16px 12px;
+      border-radius: 4px;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
     }
     .hero-sub {
       font-family: var(--sans); font-size: 15px; letter-spacing: 2px;
@@ -497,16 +503,16 @@
       gap: 8px; margin-top: 0;
     }
     .btn-hero-showing {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      display: inline-flex; align-items: center; justify-content: center;
       background: var(--gold); color: var(--navy);
       font-family: var(--sans); font-size: 15px; font-weight: 700;
       letter-spacing: 1.5px; text-transform: uppercase;
       border: none; border-radius: 4px;
-      padding: 13px 24px; min-height: 46px; cursor: pointer;
+      padding: 10px 22px; min-height: 40px; cursor: pointer;
       align-self: flex-start;
       -webkit-tap-highlight-color: transparent;
-      transition: opacity 0.15s, transform 0.15s;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+      transition: opacity 0.15s;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.3);
     }
     .btn-hero-showing:hover { opacity: 0.88; transform: translateY(-1px); }
     .btn-hero-showing:active { opacity: 0.75; transform: translateY(0); }
@@ -710,7 +716,6 @@
     <div class="hero-address">427 Howland Canal<br>Venice, California</div>
     <div class="hero-cta-wrap">
       <button class="btn-hero-showing" onclick="document.getElementById('showing-anchor').scrollIntoView({behavior:'smooth'})">
-        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
         Schedule a Private Visit
       </button>
     </div>
