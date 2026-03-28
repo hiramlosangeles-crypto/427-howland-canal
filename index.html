@@ -109,16 +109,16 @@
     }
     .hero-overlay {
       position: absolute; bottom: 0; left: 0; right: 0;
-      background: linear-gradient(to top, rgba(36,59,93,0.88) 0%, rgba(36,59,93,0.2) 50%, transparent 100%);
-      padding: 16px 20px 18px;
+      background: linear-gradient(to top, rgba(20,35,55,0.96) 0%, rgba(20,35,55,0.75) 38%, transparent 70%);
+      padding: 20px 20px 22px;
       display: flex; flex-direction: column; justify-content: flex-end;
     }
     .hero-address {
       font-family: var(--serif);
       font-size: clamp(26px, 7vw, 38px);
-      font-weight: 600; color: #fff; line-height: 1.1;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4);
-      margin-bottom: 4px;
+      font-weight: 600; color: #fff; line-height: 1.15;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.5);
+      margin-bottom: 14px;
     }
     .hero-sub {
       font-family: var(--sans); font-size: 15px; letter-spacing: 2px;
@@ -493,8 +493,8 @@
 
     /* 1. Hero CTA button */
     .hero-cta-wrap {
-      display: inline-flex; flex-direction: column; align-items: flex-start;
-      gap: 6px; margin-top: 12px;
+      display: flex; flex-direction: column; align-items: flex-start;
+      gap: 8px; margin-top: 0;
     }
     .btn-hero-showing {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -502,10 +502,11 @@
       font-family: var(--sans); font-size: 15px; font-weight: 700;
       letter-spacing: 1.5px; text-transform: uppercase;
       border: none; border-radius: 4px;
-      padding: 12px 20px; min-height: 44px; cursor: pointer;
+      padding: 13px 24px; min-height: 46px; cursor: pointer;
+      align-self: flex-start;
       -webkit-tap-highlight-color: transparent;
       transition: opacity 0.15s, transform 0.15s;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.35);
     }
     .btn-hero-showing:hover { opacity: 0.88; transform: translateY(-1px); }
     .btn-hero-showing:active { opacity: 0.75; transform: translateY(0); }
@@ -640,23 +641,22 @@
 
     /* ── OFF-MARKET BADGE ── */
     .off-market-hero {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(197,165,108,0.15);
-      border: 1px solid rgba(197,165,108,0.5);
-      border-radius: 3px;
-      padding: 5px 10px;
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(20,35,55,0.82);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 3px 3px 0;
+      padding: 6px 12px 6px 10px;
       max-width: 100%;
-      overflow: hidden;
     }
     .off-market-hero-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--gold); flex-shrink: 0;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #e8c47a; flex-shrink: 0;
     }
     .off-market-hero-text {
-      font-family: var(--sans); font-size: 10px; font-weight: 700;
-      letter-spacing: 0.5px; text-transform: uppercase;
-      color: var(--gold); white-space: nowrap;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+      font-family: var(--sans); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.8px; text-transform: uppercase;
+      color: #e8c47a; white-space: nowrap;
+      text-shadow: none;
     }
     .off-market-price-bar {
       grid-column: 1 / -1;
