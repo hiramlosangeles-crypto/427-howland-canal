@@ -222,6 +222,65 @@
       font-weight: 600; color: var(--navy-deep);
     }
     .spec-cell.full { grid-column: 1 / -1; }
+    /* ── SPEC SHEET CARDS ── */
+    .spec-sheets-row {
+      margin-top: 22px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .spec-card {
+      display: flex; align-items: stretch;
+      background: var(--cream-dark);
+      border: 1px solid rgba(197,165,108,0.4); border-radius: 4px;
+      overflow: hidden;
+    }
+    .spec-card-thumb {
+      width: 80px; flex-shrink: 0;
+      background: var(--navy-deep); overflow: hidden;
+    }
+    .spec-card-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+      display: block;
+    }
+    .spec-card-thumb.soon-thumb {
+      display: flex; align-items: center; justify-content: center;
+    }
+    .spec-card-body {
+      flex: 1; padding: 13px 14px;
+      display: flex; flex-direction: column; justify-content: space-between; gap: 10px;
+    }
+    .spec-card-meta { display: flex; flex-direction: column; gap: 3px; }
+    .spec-card-type {
+      font-family: var(--sans); font-size: 10px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--gold-text); font-weight: 700;
+    }
+    .spec-card-title {
+      font-family: var(--sans); font-size: 15px; font-weight: 600;
+      color: var(--navy-deep); line-height: 1.3;
+    }
+    .spec-card-btns { display: flex; gap: 8px; }
+    .btn-spec-view, .btn-spec-dl {
+      flex: 1; padding: 10px 6px; text-align: center;
+      font-family: var(--sans); font-size: 12px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      border-radius: 3px; cursor: pointer; min-height: 40px;
+      display: inline-flex; align-items: center; justify-content: center;
+      -webkit-tap-highlight-color: transparent; text-decoration: none;
+    }
+    .btn-spec-view {
+      background: transparent; color: var(--navy);
+      border: 1.5px solid rgba(36,59,93,0.45);
+    }
+    .btn-spec-dl {
+      background: var(--navy); color: var(--cream);
+      border: 1.5px solid var(--navy);
+    }
+    .spec-card.soon { opacity: 0.5; pointer-events: none; }
+    .spec-card.soon .spec-card-btns { display: none; }
+    .spec-soon-note {
+      font-family: var(--sans); font-size: 12px;
+      color: var(--blue-soft); letter-spacing: 0.5px; font-style: italic;
+    }
     /* ── GALLERY ── */
     .gallery-track {
       display: flex; overflow-x: auto;
@@ -757,6 +816,52 @@
       <span class="s-val">427 Howland Canal, Venice, CA 90291</span>
     </div>
   </div>
+
+  <!-- ── SPEC SHEET DOWNLOAD CARDS ── -->
+  <div class="spec-sheets-row">
+
+    <!-- FOR SALE -->
+    <div class="spec-card">
+      <div class="spec-card-thumb">
+        <img src="images/427-Howland-Canal_Full-Property-Specifications.png"
+             alt="For Sale — Full Property Specification Sheet preview" />
+      </div>
+      <div class="spec-card-body">
+        <div class="spec-card-meta">
+          <span class="spec-card-type">For Purchase</span>
+          <span class="spec-card-title">Full Property Specification Sheet</span>
+        </div>
+        <div class="spec-card-btns">
+          <a class="btn-spec-view"
+             href="images/427-Howland-Canal_Full-Property-Specifications.png"
+             target="_blank" rel="noopener">View</a>
+          <a class="btn-spec-dl"
+             href="images/427-Howland-Canal_Full-Property-Specifications.png"
+             download="427-Howland-Canal_Spec-Sheet-Sale.png">Download</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOR LEASE — placeholder until lease sheet is ready -->
+    <div class="spec-card soon">
+      <div class="spec-card-thumb soon-thumb">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+             stroke="rgba(197,165,108,0.4)" stroke-width="1.5">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+        </svg>
+      </div>
+      <div class="spec-card-body">
+        <div class="spec-card-meta">
+          <span class="spec-card-type">For Lease</span>
+          <span class="spec-card-title">Full Property Specification Sheet</span>
+        </div>
+        <span class="spec-soon-note">Coming soon</span>
+      </div>
+    </div>
+
+  </div>
+
 </section>
 <hr class="divider-gold" />
 <!-- ── GALLERY ── -->
