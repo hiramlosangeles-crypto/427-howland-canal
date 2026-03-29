@@ -1096,6 +1096,36 @@
         });
       });
     }
+
+    // ── Phone number formatter ─────────────────────
+    var phoneInput = document.querySelector('input[name="phone"]');
+    if (phoneInput) {
+      phoneInput.addEventListener('input', function(e) {
+        var digits = this.value.replace(/\D/g, '').slice(0, 10);
+        var formatted = '';
+        if (digits.length === 0) {
+          formatted = '';
+        } else if (digits.length <= 3) {
+          formatted = '(' + digits;
+        } else if (digits.length <= 6) {
+          formatted = '(' + digits.slice(0,3) + ') ' + digits.slice(3);
+        } else {
+          formatted = '(' + digits.slice(0,3) + ') ' + digits.slice(3,6) + '-' + digits.slice(6);
+        }
+        this.value = formatted;
+      });
+
+      phoneInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Backspace') {
+          var val = this.value;
+          // strip trailing non-digits cleanly on backspace
+          if (val && !val[val.length-1].match(/\d/)) {
+            e.preventDefault();
+            this.value = val.slice(0, -1).replace(/[\s\(\)\-]+$/, '');
+          }
+        }
+      });
+    }
   });
 </script>
 </body>
